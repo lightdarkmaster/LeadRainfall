@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Lead Rainfall — Zoho CRM Widget</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!--
+    ZOHO CRM EMBEDDED APP SDK
+    ─────────────────────────
+    Exposes the global `ZOHO` object that app.js uses to pull real Lead
+    records (see refreshLeadPool() in app.js). If this script fails to
+    load — e.g. you open index.html directly in a plain browser instead
+    of inside Zoho CRM — app.js detects that ZOHO.CRM.API isn't present
+    and falls back to generated sample data automatically, so local
+    preview still works without deleting this tag.
+  -->
+  <script src="https://live.zwidgets.com/js-sdk/1.2/ZohoEmbededAppSDK.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================== -->
+  <!--     WIDGET SHELL / DASHBOARD    -->
+  <!-- ============================== -->
+  <div class="widget-shell">
+
+    <!-- Header bar -->
+    <header class="widget-header">
+      <div class="header-title">
+        <span class="header-icon" aria-hidden="true">🌧️</span>
+        <div>
+          <h1>Lead Rainfall</h1>
+          <p class="header-subtitle">A gentle, endless drizzle of incoming leads</p>
+        </div>
+      </div>
+
+      <div class="header-stats">
+        <div class="stat-pill" id="fallingCounterPill">
+          <span class="stat-dot"></span>
+          <span id="fallingCounterLabel">Leads Falling: 0</span>
+        </div>
+        <div class="stat-pill stat-pill--muted" id="totalCounterPill">
+          <span id="totalCounterLabel">Total Seen: 0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main rainfall stage -->
+    <main class="rain-stage" id="rainStage" aria-label="Animated rainfall of CRM leads">
+      <!-- Falling lead cards are injected here by app.js -->
+    </main>
+
+    <!-- Footer / status bar -->
+    <footer class="widget-footer">
+      <span id="statusText">Connected to sample data · replace with live CRM feed in app.js</span>
+    </footer>
+
+  </div>
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
